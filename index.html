@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naukri Sach — Verify Before You Trust</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">🔍 Naukri Sach</div>
+    <div class="nav-links">
+      <a href="#scanner">Scanner</a>
+      <a href="#search">Company Search</a>
+      <a href="#report">Report</a>
+      <a href="#tips">Tips</a>
+    </div>
+    <button class="share-btn" onclick="shareApp()">📤 Share</button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Don't Get Fooled by <span>Fake Job Offers</span></h1>
+      <p>India's first free tool to verify job offers and protect freshers from scams.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3 id="totalReports">0</h3>
+          <p>Scams Reported</p>
+        </div>
+        <div class="stat">
+          <h3 id="totalFlags">30+</h3>
+          <p>Red Flags Detected</p>
+        </div>
+        <div class="stat">
+          <h3 id="totalSaved">100+</h3>
+          <p>Freshers Protected</p>
+        </div>
+      </div>
+      <a href="#scanner" class="hero-btn">🔍 Scan a Job Offer</a>
+    </div>
+  </div>
+
+  <!-- SCANNER SECTION -->
+  <div class="section" id="scanner">
+    <div class="section-header">
+      <h2>🔍 Job Offer Scanner</h2>
+      <p>Paste any job description or offer letter below and we will scan it instantly.</p>
+    </div>
+    <textarea id="jobInput" placeholder="Paste job offer or description here..."></textarea>
+    <button class="primary-btn" onclick="analyzeJob()">🔍 Scan Now</button>
+    <div id="result" class="result-box hidden"></div>
+  </div>
+
+  <!-- COMPANY SEARCH SECTION -->
+  <div class="section" id="search">
+    <div class="section-header">
+      <h2>🏢 Check a Company</h2>
+      <p>Search if a company has been reported as fake by other users.</p>
+    </div>
+    <div class="search-row">
+      <input type="text" id="companySearch" placeholder="Enter company name..." />
+      <button class="primary-btn" onclick="searchCompany()">Search</button>
+    </div>
+    <div id="searchResult" class="result-box hidden"></div>
+  </div>
+
+  <!-- REPORT SECTION -->
+  <div class="section" id="report">
+    <div class="section-header">
+      <h2>🚩 Report a Fake Company</h2>
+      <p>Help other freshers by reporting fake job offers you have received.</p>
+    </div>
+    <div class="report-form">
+      <input type="text" id="companyName" placeholder="Company Name *" />
+      <input type="text" id="companyContact" placeholder="Fake HR contact or email" />
+      <select id="scamType">
+        <option value="">Select Scam Type *</option>
+        <option value="Registration Fee">Asked for Registration Fee</option>
+        <option value="Fake Offer Letter">Sent Fake Offer Letter</option>
+        <option value="No Interview">Offered job without Interview</option>
+        <option value="Ghost Company">Company does not exist</option>
+        <option value="MLM Scheme">MLM / Chain Marketing Scheme</option>
+        <option value="Data Entry Scam">Fake Data Entry Job</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea id="scamDetails" placeholder="Describe what happened (optional)"></textarea>
+      <button class="primary-btn" onclick="submitReport()">🚩 Submit Report</button>
+      <div id="reportResult" class="result-box hidden"></div>
+    </div>
+  </div>
+
+  <!-- REPORTED COMPANIES -->
+  <div class="section" id="reported">
+    <div class="section-header">
+      <h2>⚠️ Recently Reported Companies</h2>
+      <p>These companies have been flagged by users. Stay alert.</p>
+    </div>
+    <div id="reportedList"></div>
+  </div>
+
+  <!-- TIPS SECTION -->
+  <div class="section" id="tips">
+    <div class="section-header">
+      <h2>💡 How to Spot a Fake Job</h2>
+      <p>Learn the warning signs before it is too late.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">💸</div>
+        <h3>They Ask for Money</h3>
+        <p>Real companies NEVER ask you to pay registration fees, deposits, or any charges to join.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📧</div>
+        <h3>Gmail HR Email</h3>
+        <p>Legitimate companies use their own domain email like hr@company.com — not Gmail or Yahoo.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚀</div>
+        <h3>Too Good to Be True</h3>
+        <p>Offers promising huge salary with no experience and no interview are almost always fake.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">⏰</div>
+        <h3>Fake Urgency</h3>
+        <p>Phrases like "limited seats" or "join today" are pressure tactics used by scammers.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📱</div>
+        <h3>WhatsApp Only</h3>
+        <p>If all communication happens only on WhatsApp with no official process — be very careful.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔍</div>
+        <h3>Unverifiable Company</h3>
+        <p>Always check the company on MCA India and LinkedIn. If it does not exist there — it is fake.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">🔍 Naukri Sach</div>
+      <p>Built to protect Indian freshers from fake job scams.</p>
+      <p>Always verify on <a href="https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html" target="_blank">MCA India</a> before accepting any offer.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
