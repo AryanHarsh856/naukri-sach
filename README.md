@@ -2,7 +2,7 @@
 
 A free tool built to protect Indian freshers from fake job scams.
 
-🌐 **Live Demo:** [Click Here](https://naukri-sach.vercel.app)
+🌐 **Live Demo:** [Click Here](naukri-sachh.vercel.app)
 
 ---
 
